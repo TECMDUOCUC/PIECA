@@ -342,3 +342,7 @@ header {
     display: flex;
     flex-direction: column;
 }
+
+.product-title {
+    font-size: 20px;
+}

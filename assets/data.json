@@ -8,7 +8,8 @@
         "height": 53,
         "width": 65,
         "length": 45,
-        "volume": 155122
+        "volume": 155122,
+        "imgdir":"assets/images/1.png"
     },
     {
         "id":2,
@@ -19,7 +20,8 @@
         "height": 37,
         "width": 52,
         "length": 6,
-        "volume": 11819
+        "volume": 11819,
+        "imgdir":"assets/images/2.webp"
     },
     {
         "id":3,
@@ -30,7 +32,8 @@
         "height": 27,
         "width": 9,
         "length": 42,
-        "volume": 10147
+        "volume": 10147,
+        "imgdir":"assets/images/3.png"
     },
     {
         "id":4,
@@ -41,7 +44,8 @@
         "height": 3,
         "width": 69,
         "length": 75,
-        "volume": 13059
+        "volume": 13059,
+        "imgdir":"assets/images/4.png"
     },
     {
         "id":5,
@@ -52,7 +56,8 @@
         "height": 37,
         "width": 41,
         "length": 4,
-        "volume": 5650
+        "volume": 5650,
+        "imgdir":"assets/images/5.png"
     },
     {
         "id":6,
@@ -63,7 +68,8 @@
         "height": 13,
         "width": 42,
         "length": 10,
-        "volume": 5347
+        "volume": 5347,
+        "imgdir":"assets/images/6.png"
     },
     {
         "id":7,
@@ -74,7 +80,8 @@
         "height": 58,
         "width": 55,
         "length": 26,
-        "volume": 82754
+        "volume": 82754,
+        "imgdir":"assets/images/7.png"
     },
     {
         "id":8,
@@ -85,7 +92,8 @@
         "height": 60,
         "width": 39,
         "length": 110,
-        "volume": 258565
+        "volume": 258565,
+        "imgdir":"assets/images/8.png"
     },
     {
         "id":9,
@@ -96,7 +104,8 @@
         "height": 21,
         "width": 13,
         "length": 60,
-        "volume": 16568
+        "volume": 16568,
+        "imgdir":"assets/images/9.png"
     },
     {
         "id":10,
@@ -107,7 +116,8 @@
         "height": 11,
         "width": 34,
         "length": 66,
-        "volume": 24836
+        "volume": 24836,
+        "imgdir":"assets/images/10.png"
     },
     {
         "id":11,
@@ -118,7 +128,8 @@
         "height": 6,
         "width": 20,
         "length": 17,
-        "volume": 2130
+        "volume": 2130,
+        "imgdir":"assets/images/11.png"
     },
     {
         "id":12,
@@ -129,7 +140,8 @@
         "height": 56,
         "width": 12,
         "length": 16,
-        "volume": 10875
+        "volume": 10875,
+        "imgdir":"assets/images/12.png"
     },
     {
         "id":13,
@@ -140,7 +152,8 @@
         "height": 35,
         "width": 113,
         "length": 5,
-        "volume": 19604
+        "volume": 19604,
+        "imgdir":"assets/images/13.png"
     },
     {
         "id":14,
@@ -151,7 +164,8 @@
         "height": 23,
         "width": 8,
         "length": 52,
-        "volume": 9843
+        "volume": 9843,
+        "imgdir":"assets/images/14.png"
     },
     {
         "id":15,
@@ -162,7 +176,8 @@
         "height":16,
         "width":22,
         "length":14,
-        "volume":4928
+        "volume":4928,
+        "imgdir":"assets/images/15.png"
     },
     {
         "id":16,
@@ -173,7 +188,8 @@
         "height":16,
         "width":22,
         "length":14,
-        "volume":4928
+        "volume":4928,
+        "imgdir":"assets/images/16.png"
     },
     {
         "id":17,
@@ -184,7 +200,8 @@
         "height":45,
         "width":12,
         "length":27,
-        "volume":14580
+        "volume":14580,
+        "imgdir":"assets/images/17.png"
     },
     {
         "id":18,
@@ -195,7 +212,8 @@
         "height":15,
         "width":25,
         "length":17,
-        "volume":6375
+        "volume":6375,
+        "imgdir":"assets/images/18.png"
     },
     {
         "id":19,
@@ -205,6 +223,7 @@
         "weight":12000,
         "height":405,
         "width":154,
-        "volume":62370
+        "volume":62370,
+        "imgdir":"assets/images/19.png"
     }
 ]
