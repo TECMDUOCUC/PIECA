@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
             alert("Dejenos tranquilos.")
             console.log('Form submission payload:', data);
             form.reset();
+            window.location.href = "https://www.google.com/";
         }
     });
 });
