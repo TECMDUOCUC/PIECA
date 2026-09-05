@@ -28,17 +28,17 @@
                 
                 <form id="contact" class="contact-form" onsubmit="event.preventDefault();">
                     <div class="row">
-                        <input name="name" type="text" placeholder="Nombre" required maxlength="25"
+                        <input name="name" type="text" placeholder="Nombre" required maxlength="100"
                         oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '')"
                         >
-                        <input name="second" type="text" placeholder="Apellido" required maxlength="25"
+                        <input name="second" type="text" placeholder="Apellido" required maxlength="100"
                         oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '')"
                         >
                     </div>
                     
                     <input name="email" type="email" placeholder="Correo electrónico" required>
                     
-                    <textarea name="message" maxlength="300" placeholder="Escriba su mensaje (máx. 300 caracteres)..." required></textarea>
+                    <textarea name="message" maxlength="500" placeholder="Escriba su mensaje (máx. 500 caracteres)..." required></textarea>
                     
                     <button type="submit" id="sendData">Enviar</button>
                 </form>
