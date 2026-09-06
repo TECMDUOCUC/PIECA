@@ -98,7 +98,7 @@ function saveCart(cart) {
 
 function comprar(){
     if (currentId){
-      if (currentId > 0 && currentId < allItems.length) {
+      if (currentId >= 0 && currentId < allItems.length) {
         const cart = getCart();
 
         const existing = cart.find(entry => entry.id === currentId);
