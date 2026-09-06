@@ -113,6 +113,9 @@ function comprar(){
             cart.push({ id: currentId, quantity: 1 });
         }
         saveCart(cart);
+        if (typeof renderNavigation === "function") {
+            renderNavigation();
+        }
         alert("Añadido al carrito!");
     } else {
         alert("Error! ID Inexistente");

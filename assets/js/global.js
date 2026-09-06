@@ -2,13 +2,26 @@ function logout() {
     localStorage.removeItem('pieca_user');
     window.location.reload();
 }
-//Gemini 3.8 Flash
+
+function getCartItemCount() {
+    const raw = localStorage.getItem('pieca_cart');
+    try {
+        const cart = raw ? JSON.parse(raw) : [];
+        return cart.reduce((sum, item) => sum + (Number(item.quantity) || 0), 0);
+    } catch {
+        return 0;
+    }
+}
+
 function renderNavigation() {
     const user = localStorage.getItem('pieca_user');
+    const itemCount = getCartItemCount();
+    const cartLabel = itemCount > 0 ? `Carrito (x${itemCount})` : 'Carrito';
 
+    // Top navigation
     const topNavLinks = user
         ? `<a href="catalog.html" class="prettyLink">Catálogo</a>
-           <a href="cart.html" class="prettyLink">Carrito</a>
+           <a href="cart.html" class="prettyLink">${cartLabel}</a>
            <a href="receipt.html" class="prettyLink">Mis Pedidos</a>
            <a href="#" onclick="logout()" class="prettyLink">Cerrar Sesión</a>`
         : `<a href="catalog.html" class="prettyLink">Catálogo</a>
@@ -18,8 +31,8 @@ function renderNavigation() {
     const headers = document.querySelectorAll('header');
     headers.forEach(header => {
         if (header.id === 'ignore') return;
+
         let nav = header.querySelector('nav');
-        
         if (!nav) {
             nav = document.createElement('nav');
             header.appendChild(nav);
@@ -28,6 +41,7 @@ function renderNavigation() {
         nav.innerHTML = topNavLinks;
     });
 
+    // Footer navigation
     const footerNavLinks = user
         ? `<a href="blog.html" class="prettyLink">Blog</a>
            <a href="contact.html" class="prettyLink">Contáctanos</a>`
@@ -47,3 +61,5 @@ function renderNavigation() {
 }
 
 document.addEventListener('DOMContentLoaded', renderNavigation);
+
+window.renderNavigation = renderNavigation;

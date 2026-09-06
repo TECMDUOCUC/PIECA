@@ -71,10 +71,13 @@ function modifyQuantity(id, amount) {
         item.quantity += amount;
         if (item.quantity <= 0) {
             removeItem(targetId);
-            return;
+        } else {
+            saveCart(cart);
+            renderCart();
         }
-        saveCart(cart);
-        renderCart();
+        if (typeof renderNavigation === "function") {
+            renderNavigation();
+        }
     }
 }
 
