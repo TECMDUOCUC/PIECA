@@ -1,7 +1,65 @@
-const params = new URLSearchParams(window.location.search);
-const id = params.get("id"); //1-19
+const changable = {
+    "name" : {
+      "change" : "textContent",
+      "item" : document.getElementById("rock-name")
+    },
+    "imgdir" : {
+      "change" : "src",
+      "item" : document.getElementById("product-image")
+    },
+    "price" : {
+      "change" : "textContent",
+      "item" : document.getElementById("price")
+    },
+    "shipping-fee" : {
+      "change" : "textContent",
+      "item" : document.getElementById("shipping-fee")
+    },
+    "weight" : {
+      "change" : "textContent",
+      "item" : document.getElementById("weight")
+    },
+    "height" : {
+      "change" : "textContent",
+      "item" : document.getElementById("height")
+    },
+    "width" : {
+      "change" : "textContent",
+      "item" : document.getElementById("width")
+    },
+    "length" : {
+      "change" : "textContent",
+      "item" : document.getElementById("length")
+    },
+    "volume" : {
+      "change" : "textContent",
+      "item" : document.getElementById("volume")
+    },
+    "color" : {
+      "change" : "textContent",
+      "item" : document.getElementById("color")
+    }
+}
+const CART_KEY = "pieca_cart";
+const priceFormatter = new Intl.NumberFormat("es-CL", {
+  style: "currency",
+  currency: "CLP"
+});
+
+const emptyData = {
+        "name":"Not Found",
+        "price": "N/A",
+        "shipping-fee": "N/A",
+        "weight": "N/A",
+        "height": "N/A",
+        "width": "N/A",
+        "length": "N/A",
+        "volume": "N/A",
+        "imgdir": "assets/images/attachment.gif"
+}
 
 let allItems = [];
+let currentId = null;
 
 async function fetchData() {
   try {
@@ -9,54 +67,85 @@ async function fetchData() {
       if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
       const data = await response.json();
       allItems = data;
-      return data;
     } catch (error) {
       console.error("Failed to load data:", error);
-      return [];
   }
-}
-
-function getItemById(id) {
-  return allItems.find(item => item.id === Number(id));
 }
 
 function displayItem(item) {
-  if (!item) {
-    document.getElementById("rock-name").textContent = "Not found";
-    document.getElementById("product-image").src = item.imgdir;
-    document.getElementById("price").textContent = "N/A";
-    document.getElementById("shipping-fee").textContent = "N/A";
-    document.getElementById("height").textContent = "N/A";
-    document.getElementById("width").textContent = "N/A";
-    document.getElementById("length").textContent = "N/A";
-    document.getElementById("volume").textContent = "N/A";
+    for (const [key, value] of Object.entries(item)) {
+        if (key in changable) {
+            if (key == "price"){
+              updatePrice(value)
+            } else {
+              changable[key].item[changable[key].change] = value;
+            }
+        }
+    }
+}
+
+function getCart() {
+  const raw = localStorage.getItem(CART_KEY);
+  try {
+    return raw ? JSON.parse(raw) : [];
+  } catch {
+    return [];
+  }
+}
+function saveCart(cart) {
+  localStorage.setItem(CART_KEY, JSON.stringify(cart));
+}
+
+function comprar(){
+    if (currentId){
+      if (currentId > 0 && currentId < allItems.length) {
+        const cart = getCart();
+
+        const existing = cart.find(entry => entry.id === currentId);
+
+        if (existing) {
+          existing.quantity += 1;
+        } else {
+          cart.push({ id: currentId, quantity: 1 });
+        }
+        saveCart(cart);
+        alert("Añadido al carrito!");
+      } else {
+        alert("Error! ID Inexistente");
+      }
+    } else {
+      alert("Error! No ha ingresado ninguna ID.")
+    }
+}
+
+//Gemini generated with 3.8 FLASH
+function updatePrice(value) {
+  const priceElement = document.getElementById("price");
+  if (!priceElement) return;
+
+  const numericValue = Number(value);
+
+  if (isNaN(numericValue)) {
+    priceElement.value = "";
+    priceElement.textContent = "N/A";
     return;
   }
-  document.getElementById("rock-name").textContent = item.name;
-    document.getElementById("product-image").src = item.imgdir;
-    document.getElementById("price").textContent = item.price;
-    document.getElementById("shipping-fee").textContent = item['shipping-fee'];
-    document.getElementById("height").textContent = item.height;
-    document.getElementById("width").textContent = item.width;
-    document.getElementById("length").textContent = item.length;
-    document.getElementById("volume").textContent = item.volume;
 
-    const img = document.getElementById("product-image");
-    img.src = item.image || item.imgdir || "assets/images/placeholder.png";
-    item.style.display = "block";
-    img.alt = item.name 
+  priceElement.value = numericValue;
+  priceElement.textContent = priceFormatter.format(numericValue);
 }
 
 (async function init() {
-  await fetchData();
+    await fetchData();
 
-  const params = new URLSearchParams(window.location.search);
-  const id = params.get('id');
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+    const item = allItems[id];
+    currentId = id;
+    if (item) {
+      displayItem(item);
+    } else {
+      displayItem(emptyData);
+    }
 
-  if (id) {
-    const item = getItemById(id);
-    displayItem(item);
-  } else {
-    displayItem(null);
-  }
 })();

@@ -22,15 +22,67 @@
         </nav>
     </header>
 
-    <main style="text-align: center; padding: 50px;">
-        <h1 id="rock-name">Loading...</h1> <!--Temp placeholder-->
-        <img id="product-image" src="assets/images/loading.gif" alt="rock">
-        <p id="price"></p>
-        <p id="shipping-fee"></p>
-        <p id="height"></p>
-        <p id="width"></p>
-        <p id="length"></p>
-        <p id="volume"></p>
+    <main class="productAlign">
+        
+        <div class="productSquare">
+            <img id="product-image" src="assets/images/loading.gif" alt="rock">
+        </div>
+
+        <div class="productDetails">
+            <h1>
+                <ul>
+                    <li id="rock-name">
+                        Cargando...
+                    </li>
+                </ul>
+            </h1>
+
+            <h2>
+                <ul>
+                    <li>
+                        <i id="price">Test</i>
+                    </li>
+                </ul>
+            </h2>
+            
+            <table class="productTable">
+                <tr>
+                    <th>Categoria</th>
+                    <th>Valor</th>
+                </tr>
+                <tr>
+                    <td>Peso</td>
+                    <td id="weight"></td>
+                </tr>
+                <tr>
+                    <td>Altura</td>
+                    <td id="height"></td>
+                </tr>
+                <tr>
+                    <td>Anchura</td>
+                    <td id="width"></td>
+                </tr>
+                <tr>
+                    <td>Longitud</td>
+                    <td id="length"></td>
+                </tr>
+                <tr>
+                    <td>Volumen</td>
+                    <td id="volume"></td>
+                </tr>
+                <tr>
+                    <td>Costo de envio</td>
+                    <td id="shipping-fee"></td>
+                </tr>
+            </table>
+            
+            <button onclick="comprar()" class="buyButton">
+                <i>
+                    Añadir a carrito
+                </i>
+            </button>
+        </div>
+        
     </main>
 
     <footer>

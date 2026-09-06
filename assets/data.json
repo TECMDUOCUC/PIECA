@@ -1,6 +1,5 @@
-[
+[   
     {
-        "id":1,
         "name":"Piedra algo ovalada",
         "price":1299,
         "shipping-fee":1000,
@@ -11,8 +10,8 @@
         "volume": 155122,
         "imgdir":"assets/images/1.png"
     },
+
     {
-        "id":2,
         "name":"Piedra más ovalada",
         "price":1499,
         "shipping-fee":1000,
@@ -23,8 +22,8 @@
         "volume": 11819,
         "imgdir":"assets/images/2.webp"
     },
+
     {
-        "id":3,
         "name":"Piedra",
         "price":4999,
         "shipping-fee":1000,
@@ -35,8 +34,8 @@
         "volume": 10147,
         "imgdir":"assets/images/3.png"
     },
+
     {
-        "id":4,
         "name":"Piedra rocosa",
         "price":4299,
         "shipping-fee":1000,
@@ -47,8 +46,8 @@
         "volume": 13059,
         "imgdir":"assets/images/4.png"
     },
+
     {
-        "id":5,
         "name":"Piedra porosa",
         "price":1299,
         "shipping-fee":1000,
@@ -59,8 +58,8 @@
         "volume": 5650,
         "imgdir":"assets/images/5.png"
     },
+
     {
-        "id":6,
         "name":"Piedra piedrosa",
         "price":1899,
         "shipping-fee":1000,
@@ -71,8 +70,8 @@
         "volume": 5347,
         "imgdir":"assets/images/6.png"
     },
+
     {
-        "id":7,
         "name":"Piedra plana",
         "price":4099,
         "shipping-fee":1000,
@@ -84,7 +83,6 @@
         "imgdir":"assets/images/7.png"
     },
     {
-        "id":8,
         "name":"Piedra no plana",
         "price":1399,
         "shipping-fee":1000,
@@ -96,7 +94,6 @@
         "imgdir":"assets/images/8.png"
     },
     {
-        "id":9,
         "name":"Piedra puntiaguda",
         "price":2799,
         "shipping-fee":1000,
@@ -108,7 +105,6 @@
         "imgdir":"assets/images/9.png"
     },
     {
-        "id":10,
         "name":"Piedra blanca",
         "price":1899,
         "shipping-fee":1000,
@@ -120,7 +116,6 @@
         "imgdir":"assets/images/10.png"
     },
     {
-        "id":11,
         "name":"Piedra no blanca",
         "price":1099,
         "shipping-fee":1000,
@@ -132,7 +127,6 @@
         "imgdir":"assets/images/11.png"
     },
     {
-        "id":12,
         "name":"Piedra café",
         "price":2599,
         "shipping-fee":1000,
@@ -144,7 +138,6 @@
         "imgdir":"assets/images/12.png"
     },
     {
-        "id":13,
         "name":"Piedra bipolar",
         "price":3199,
         "shipping-fee":1000,
@@ -156,7 +149,6 @@
         "imgdir":"assets/images/13.png"
     },
     {
-        "id":14,
         "name":"Piedra negra",
         "price":3299,
         "shipping-fee":1000,
@@ -168,7 +160,6 @@
         "imgdir":"assets/images/14.png"
     },
     {
-        "id":15,
         "name":"Piedra ondulada",
         "price":1299,
         "shipping-fee":1000,
@@ -180,7 +171,6 @@
         "imgdir":"assets/images/15.png"
     },
     {
-        "id":16,
         "name":"Piedra Stone",
         "price":2199,
         "shipping-fee":1000,
@@ -192,7 +182,6 @@
         "imgdir":"assets/images/16.png"
     },
     {
-        "id":17,
         "name":"Piedra musgosa",
         "price":1399,
         "shipping-fee":1000,
@@ -204,7 +193,6 @@
         "imgdir":"assets/images/17.png"
     },
     {
-        "id":18,
         "name":"Piedra Peresoza",
         "price":1499,
         "shipping-fee":1000,
@@ -216,11 +204,11 @@
         "imgdir":"assets/images/18.png"
     },
     {
-        "id":19,
         "name":"Piedra Sigma",
-        "price":4267,
+        "price":4206767,
         "shipping-fee":1000,
         "weight":12000,
+        "length":80,
         "height":405,
         "width":154,
         "volume":62370,
