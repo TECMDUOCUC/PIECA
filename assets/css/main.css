@@ -177,7 +177,7 @@ body {
 footer {
     background-color: black;
     color: white;
-    height: 120px;
+    height: 70px;
     padding: 5px 20px;
     margin: 0;
 
@@ -303,7 +303,7 @@ footer {
 header {
     background-color: black;
     color: white;
-    height: 70px;
+    height: 100px;
     padding: 5px 20px;
 
     display: flex;
@@ -469,4 +469,42 @@ header {
   100% {
     background-position: 200% 50%;
   }
+}
+
+
+.carritoCompras {
+    width: 80%; 
+    max-width: 800px; 
+    background: #111; 
+    padding: 20px; 
+    border-radius: 10px;
+}
+
+.blogContainer {
+    padding: 50px; 
+    color: white;
+    max-width: 800px; 
+    margin: auto;
+}
+
+.blogContainer h1 {
+    color: black;
+}
+
+.blogArticle {
+    background: #111;
+    padding: 20px; 
+    border-radius: 
+    10px; 
+    margin-bottom: 20px;
+}
+
+.publishedWhen {
+    color: #ccc;
+    font-size: 0.9em;
+}
+
+.blogArticle a {
+    color: #fff; 
+    text-decoration: underline;
 }

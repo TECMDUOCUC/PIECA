@@ -97,24 +97,25 @@ function saveCart(cart) {
 }
 
 function comprar(){
-    if (currentId){
-      if (currentId >= 0 && currentId < allItems.length) {
-        const cart = getCart();
+    const user = localStorage.getItem('pieca_user');
+    if (!user) {
+        alert("Debe iniciar sesión para añadir productos al carrito.");
+        return window.location.href = 'login.html';
+    }
 
+    if (currentId && currentId >= 0 && currentId < allItems.length) {
+        const cart = getCart();
         const existing = cart.find(entry => entry.id === currentId);
 
         if (existing) {
-          existing.quantity += 1;
+            existing.quantity += 1;
         } else {
-          cart.push({ id: currentId, quantity: 1 });
+            cart.push({ id: currentId, quantity: 1 });
         }
         saveCart(cart);
         alert("Añadido al carrito!");
-      } else {
-        alert("Error! ID Inexistente");
-      }
     } else {
-      alert("Error! No ha ingresado ninguna ID.")
+        alert("Error! ID Inexistente");
     }
 }
 

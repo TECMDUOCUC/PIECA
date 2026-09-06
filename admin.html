@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Pieca</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script src="assets/js/global.js" defer></script>
+</head>
+<body>
+    <header>
+        <h2><a href="index.html" class="prettyLink">Pieca&reg;</a></h2>
+    </header>
+    <main class="centeredMain">
+        <div class="loginBox" style="width: 400px;">
+            <h2>Añadir Nueva Piedra</h2>
+            <form id="admin-form" class="contact-form" onsubmit="event.preventDefault(); alert('Producto añadido (Simulación).'); this.reset();">
+                <input name="name" type="text" placeholder="Nombre de la piedra" required>
+                <input name="price" type="number" placeholder="Precio (CLP)" required>
+                <input name="weight" type="number" placeholder="Peso (g)" required>
+                <input name="imgdir" type="text" placeholder="URL de Imagen" required>
+                <button type="submit" id="sendData">Guardar en Base de Datos</button>
+            </form>
+        </div>
+    </main>
+    <footer></footer>
+</body>
+</html>
