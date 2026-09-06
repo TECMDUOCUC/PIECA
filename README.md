@@ -1,47 +1,47 @@
-# Pieca® — Plataforma E-Commerce de Rocas y Minerales 🪨
+# Pieca® — Plataforma E-Commerce de Rocas y Minerales
 
 > *"Entregándote las mejores piedras para ti."*
 > 
 
 ---
 
-## 📌 Descripción del Proyecto
+## Descripción del Proyecto
 
-**Pieca®** es una plataforma web integral de comercio electrónico diseñada para la exhibición, catalogación y comercialización de ejemplares geológicos y rocas naturales. El sistema conecta a entusiastas de las piedras con productos recolectados manualmente, ofreciendo una experiencia interactiva para consultar especificaciones físicas completas (peso, dimensiones, volumen), gestionar un carro de compras y procesar pedidos.
+**Pieca®** es una plataforma web integral de comercio electrónico diseñada para la exhibición, catalogación y comercialización de ejemplares geológicos y rocas naturales. El sistema conecta a fanáticos de las piedras con productos recolectados manualmente, ofreciendo una experiencia interactiva para consultar especificaciones físicas completas (peso, dimensiones, volumen), gestionar un carro de compras y procesar pedidos.
 
 ---
 
-## 🚀 Funcionalidades Principales
+## Funcionalidades Principales
 
-* **🪨 Catálogo Dinámico e Interactivo:** Carga y renderizado automático del inventario desde fuentes JSON, con un buscador en tiempo real por coincidencia de texto.
-
-
-* **🖼️ Carrusel de Portada:** Desplazamiento dinámico en la página principal con citas temáticas aleatorias y cálculo de posiciones relativas.
+* **Catálogo Dinámico e Interactivo:** Carga y renderizado automático del inventario desde fuentes JSON, con un buscador en tiempo real por coincidencia de texto.
 
 
-* **📄 Detalle de Producto:** Vista detallada de especificaciones físicas (peso, altura, anchura, longitud, volumen, costo de envío y precio formateado en CLP mediante `Intl.NumberFormat`).
+* **Carrusel de Portada:** Desplazamiento dinámico en la página principal con citas temáticas aleatorias y cálculo de posiciones relativas.
 
 
-* **🔐 Autenticación y Validación de Clientes:**
+* **Detalle de Producto:** Vista detallada de especificaciones físicas (peso, altura, anchura, longitud, volumen, costo de envío y precio formateado en CLP mediante `Intl.NumberFormat`).
+
+
+* **Autenticación y Validación de Clientes:**
 * Almacenamiento local de sesión mediante `localStorage`.
 * Validación estricta de dominios de correo permitidos (`@duoc.cl`, `@profesor.duoc.cl` y `@gmail.com`).
 * Validación algorítmica de RUT chileno usando el cálculo de Módulo 11 para la verificación del dígito verificador.
 
 
-* **🛒 Carrito de Compras Persistente:** Modificación de cantidades unitarias, eliminación de ítems por ID y cálculo automático del total de la orden.
-* **🧾 Comprobante y Estado de Envío:** Generación de recibo digital tras el checkout con estado de procesamiento y fecha del pedido.
-* **🛠️ Panel de Administración (`admin.html`):**
-* Vista de inventario con opción para añadir nuevas piezas geológicas o eliminarlas del catálogo.
+* **Carrito de Compras Persistente:** Modificación de cantidades unitarias, eliminación de ítems por ID y cálculo automático del total de la orden.
+* **Comprobante y Estado de Envío:** Generación de recibo digital tras el checkout con estado de procesamiento y fecha del pedido.
+* **Panel de Administración (`admin.html`):**
+* Vista de inventario con opción para añadir nuevos productos Pieca o eliminarlas del catálogo.
 * Gestión simulada de usuarios registrados con visualización de RUT y roles.
 * Registro histórico de transacciones comerciales y boletas emitidas.
 
 
-* **📰 Módulo de Blog:** Sección de artículos informativos y divulgación geológica con acceso desde el pie de página.
-* **🧭 Navegación Condicional:** Encabezado y pie de página estandarizados que adaptan sus enlaces según si el usuario ha iniciado sesión.
+* **Módulo de Blog:** Sección de artículos informativos y divulgación geológica con acceso desde el pie de página.
+* **Navegación Condicional:** Encabezado y pie de página estandarizados que adaptan sus enlaces según si el usuario ha iniciado sesión.
 
 ---
 
-## 🗂️ Estructura del Proyecto
+## Estructura del Proyecto
 
 ```text
 pieca-e-commerce/
@@ -53,7 +53,7 @@ pieca-e-commerce/
 ├── login.html            # Acceso de usuarios
 ├── register.html         # Formulario de registro con validación de RUT y correo
 ├── admin.html            # Panel de control de inventario, usuarios y ventas
-├── blog.html             # Sección de artículos geológicos y noticias
+├── blog.html             # Sección de artículos Pieca y noticias
 ├── contact.html          # Formulario de contacto con validación de campos
 └── assets/
     ├── css/
@@ -97,7 +97,7 @@ pieca-e-commerce/
 | `18` | Piedra Sigma | 12.000 | 405 | 154 | 80 | 62.370 | $4.206.767 |
 ---
 
-## 🛠️ Tecnologías y Estándares de Implementación
+## Tecnologías y Estándares de Implementación
 
 * **Frontend:** HTML5 semántico estructurado en módulos claros.
 
@@ -108,13 +108,13 @@ pieca-e-commerce/
 * **Lógica del Cliente:** JavaScript estándar (ES6+) con carga diferida (`defer`).
 
 
-* **Persistencia:** Simulación completa del estado de sesión, carrito de compras, recibos y modificaciones del inventario mediante la Web Storage API (`localStorage`).
+* **Persistencia:** Simulación completa del estado de sesión, carrito de compras, recibos y modificaciones del inventario a traves de "Web Storage API" (`localStorage`).
 * **Reglas de Entrada:** Validación de expresiones regulares en formularios (`oninput` y atributos `pattern`).
 
 
 
 ---
 
-## 📄 Derechos de Autor
+## Derechos de Autor
 
 © 2026 Pieca®. Todos los derechos reservados.
