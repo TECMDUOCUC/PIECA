@@ -3,26 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin - Pieca</title>
-    <link rel="stylesheet" href="assets/css/main.css">
+    <title>Panel de Administración - Pieca</title>
     <script src="assets/js/global.js" defer></script>
+    <script src="assets/js/admin.js" defer></script>
+    <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
     <header>
         <h2><a href="index.html" class="prettyLink">Pieca&reg;</a></h2>
     </header>
-    <main class="centeredMain">
-        <div class="loginBox" style="width: 400px;">
-            <h2>Añadir Nueva Piedra</h2>
-            <form id="admin-form" class="contact-form" onsubmit="event.preventDefault(); alert('Producto añadido (Simulación).'); this.reset();">
-                <input name="name" type="text" placeholder="Nombre de la piedra" required>
-                <input name="price" type="number" placeholder="Precio (CLP)" required>
-                <input name="weight" type="number" placeholder="Peso (g)" required>
-                <input name="imgdir" type="text" placeholder="URL de Imagen" required>
-                <button type="submit" id="sendData">Guardar en Base de Datos</button>
-            </form>
-        </div>
+
+    <main class="adminLayout">
+        <aside class="adminSidebar">
+            <button class="adminTabBtn active" data-tab="rocks">Rocas</button>
+            <button class="adminTabBtn" data-tab="add-rock">Añadir Roca</button>
+            <button class="adminTabBtn" data-tab="users">Usuarios</button>
+            <button class="adminTabBtn" data-tab="sales">Ventas</button>
+        </aside>
+
+        <section class="adminContent">
+            <!-- Section 1: Rocks List -->
+            <div id="section-rocks" class="adminSection active">
+                <div class="adminHeaderRow">
+                    <h1 class="adminTitle">Inventario de Rocas</h1>
+                    <button class="buyButton" style="max-width: 180px;" onclick="switchTab('add-rock')">+ Nueva Roca</button>
+                </div>
+                <table class="adminTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Vista</th>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th>Peso (g)</th>
+                            <th>Dimensiones (HxWxL)</th>
+                            <th>Volumen</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="rocks-table-body">
+                        <!-- Rendered via admin.js -->
+                    </tbody>
+                </table>
+            </div>
+            <div id="section-add-rock" class="adminSection">
+                <div class="adminHeaderRow">
+                    <h1 class="adminTitle">Añadir Nueva Roca</h1>
+                </div>
+                <div class="loginBox" style="width: 100%; max-width: 600px; margin: 0 auto;">
+                    <form id="add-rock-form" class="contact-form">
+                        <input name="name" type="text" placeholder="Nombre de la roca" required>
+                        <div class="row">
+                            <input name="price" type="number" placeholder="Precio (CLP)" required min="1">
+                            <input name="shipping-fee" type="number" placeholder="Costo de Envío (CLP)" value="1000" required min="0">
+                        </div>
+                        <div class="row">
+                            <input name="weight" type="number" placeholder="Peso (g)" required min="1">
+                            <input name="volume" type="number" placeholder="Volumen (cm³)" required min="1">
+                        </div>
+                        <div class="row">
+                            <input name="height" type="number" placeholder="Altura (cm)" required min="1">
+                            <input name="width" type="number" placeholder="Anchura (cm)" required min="1">
+                            <input name="length" type="number" placeholder="Longitud (cm)" required min="1">
+                        </div>
+                        <input name="imgdir" type="text" placeholder="Ruta de la imagen (ej: assets/images/1.png)" required>
+                        <button type="submit" id="sendData">Guardar Roca en Inventario</button>
+                    </form>
+                </div>
+            </div>
+
+            <div id="section-users" class="adminSection">
+                <div class="adminHeaderRow">
+                    <h1 class="adminTitle">Usuarios Registrados</h1>
+                </div>
+                <table class="adminTable">
+                    <thead>
+                        <tr>
+                            <th>RUT</th>
+                            <th>Nombre Completo</th>
+                            <th>Usuario</th>
+                            <th>Email</th>
+                            <th>Rol</th>
+                        </tr>
+                    </thead>
+                    <tbody id="users-table-body">
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="section-sales" class="adminSection">
+                <div class="adminHeaderRow">
+                    <h1 class="adminTitle">Historial de Ventas</h1>
+                </div>
+                <table class="adminTable">
+                    <thead>
+                        <tr>
+                            <th>Nº Boleta</th>
+                            <th>Fecha</th>
+                            <th>Cliente</th>
+                            <th>Productos</th>
+                            <th>Total</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="sales-table-body">
+                    </tbody>
+                </table>
+            </div>
+        </section>
     </main>
+
     <footer></footer>
 </body>
 </html>
